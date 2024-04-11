@@ -1,0 +1,64 @@
+using System;
+
+class Calculadora
+{
+    static void Main()
+    {
+        while (true)
+        {
+            Console.WriteLine("Escolha uma operação:");
+            Console.WriteLine("1 - Soma");
+            Console.WriteLine("2 - Subtração");
+            Console.WriteLine("0 - Sair");
+
+            int opcao = int.Parse(Console.ReadLine());
+
+            if (opcao == 0)
+            {
+                break;
+            }
+
+            double resultado = 0;
+
+            switch (opcao)
+            {
+                case 1:
+                    resultado = Soma();
+                    break;
+                case 2:
+                    resultado = Subtracao();
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida. Tente novamente.");
+                    continue;
+            }
+
+            Console.WriteLine($"O resultado é: {resultado}\n");
+        }
+
+        Console.WriteLine("Calculadora encerrada. Pressione qualquer tecla para sair.");
+        Console.ReadKey();
+    }
+
+    static double Soma()
+    {
+        Console.WriteLine("Digite o primeiro número:");
+        double numero1 = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Digite o segundo número:");
+        double numero2 = double.Parse(Console.ReadLine());
+
+        return numero1 + numero2;
+    }
+
+    static double Subtracao()
+    {
+        Console.WriteLine("Digite o primeiro número:");
+        double numero1 = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Digite o segundo número:");
+        double numero2 = double.Parse(Console.ReadLine());
+
+        return numero1 - numero2;
+    }
+}
